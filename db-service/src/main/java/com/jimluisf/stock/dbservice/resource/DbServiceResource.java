@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.jimluisf.stock.dbservice.model.Quote;
 import com.jimluisf.stock.dbservice.model.Quotes;
+import com.jimluisf.stock.dbservice.model.ResponseObject;
 import com.jimluisf.stock.dbservice.repository.QuotesRepository;
 
 @RestController
@@ -24,11 +25,14 @@ public class DbServiceResource
 	private QuotesRepository quotesRepository;
 
 	@GetMapping("/{username}")
-	public List<Quote> getQuotes(@PathVariable String username)
+	public ResponseObject getQuotes(@PathVariable String username)
 	{
-		List<Quote> quoteList = quotesRepository.findByUserName(username);
+		ResponseObject responseObject = new ResponseObject();
 		
-		return quoteList;
+		List<Quote> quoteList = quotesRepository.findByUserName(username);
+		responseObject.setQuotes(quoteList);
+		
+		return responseObject;
 	}
 	
 	@PostMapping("/add")
