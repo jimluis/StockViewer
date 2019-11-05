@@ -28,11 +28,11 @@ public class StockResource
 	@Autowired
 	RestTemplate restTemplate;
 	
-
+//http://localhost:8080/api/stock-service/rest/stock/Luis API Gateway
 	@GetMapping("/{username}")
 	public List<Stock>getStock(@PathVariable("username") String userName)
 	{
-		ResponseObject responseObject = restTemplate.getForObject("http://localhost:8080/rest/db/"+userName, ResponseObject.class);
+		ResponseObject responseObject = restTemplate.getForObject("http://db-service/rest/db/"+userName, ResponseObject.class);
 		List<Stock> stockList = new ArrayList<Stock>();
 //		ResponseEntity<List<String>> responseObject = restTemplate.exchange("http://localhost:8080/rest/db/"+userName, HttpMethod.GET, null,new ParameterizedTypeReference<List<String>>() {
 //		});

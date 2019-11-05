@@ -8,10 +8,10 @@
 		<version>2.2.0.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.jimluis</groupId>
-	<artifactId>stock-service</artifactId>
+	<groupId>com.jimluisf</groupId>
+	<artifactId>eureka-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>stock-service</name>
+	<name>eureka-service</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -26,16 +26,14 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.yahoofinance-api/YahooFinanceAPI -->
+		<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-zuul -->
 		<dependency>
-		    <groupId>com.yahoofinance-api</groupId>
-		    <artifactId>YahooFinanceAPI</artifactId>
-		    <version>3.15.0</version>
+		    <groupId>org.springframework.cloud</groupId>
+		    <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+		    <version>2.0.2.RELEASE</version>
 		</dependency>
-
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
